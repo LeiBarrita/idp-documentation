@@ -1,8 +1,0 @@
-{
-  "label": "Rutas",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "Tutorial básico sobre rutas para una API en laravel"
-  }
-}

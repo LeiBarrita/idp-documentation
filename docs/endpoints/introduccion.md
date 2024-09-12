@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
+title: Introducción
 ---
 
-# Rutas - Introducción
+# Endpoints - Introducción
 
-Una ruta en Laravel es la definición de una URL específica que asocia una solicitud HTTP (GET, POST, PUT, PATCH, DELETE) con un [controlador](../controladores/introduccion.md) o función que maneja la lógica correspondiente.
+Una endpoint en Laravel es la definición de una Ruta o URL específica que asocia una solicitud HTTP (GET, POST, PUT, PATCH, DELETE) con un [controlador](../controladores/introduccion.md) o función que maneja la lógica correspondiente.
 
 En Laravel, las rutas son esenciales para definir cómo tu aplicación responde a las solicitudes HTTP. En el caso de las **APIs**, las rutas que las gestionan se encuentran en el archivo `routes/api.php`. Este archivo es el lugar donde defines las URL que tu API va a exponer y cómo deben ser procesadas. Laravel hace que este proceso sea simple y estructurado.
 
@@ -43,25 +44,3 @@ Route::delete('/users/{id}', 'UserController@destroy'); // Eliminar un usuario e
 - `Route::put('/users/{id}', 'UserController@update');`: Esta ruta se usa para actualizar un usuario existente y llama al método `update` del controlador, basado en el `id` del usuario.
 
 - `Route::delete('/users/{id}', 'UserController@destroy');`: Permite eliminar un usuario por su `id`.
-
-```php title="routes\api.php"
-<?php
-
-use App\Http\Controllers\Api\FGESolicitudController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ApiIntercommunication;
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-
-Route::middleware('basic.auth')->group(function () {
-
-    Route::get('/catalogos/defensores', [ApiIntercommunication::class, 'getDefensores']);
-
-    Route::post('/solicitudes/defensores', [FGESolicitudController::class, 'createRequest']);
-    Route::get('/solicitudes/defensores', [FGESolicitudController::class, 'getRequests']);
-});
-```

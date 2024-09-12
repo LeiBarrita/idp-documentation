@@ -1,8 +1,9 @@
 ---
 sidebar_position: 2
+title: Middleware
 ---
 
-# Rutas - Middleware
+# Endpoints - Middleware
 
 Un **middleware** en Laravel es una capa intermedia que inspecciona, filtra o modifica solicitudes HTTP **antes** de que lleguen a las rutas o controladores, y **después** de que las respuestas se envíen al cliente. En el caso de las APIs, los middlewares suelen usarse para tareas como la **autenticación**, la **verificación de permisos**, o la **modificación de datos** antes de que lleguen a su destino.
 
